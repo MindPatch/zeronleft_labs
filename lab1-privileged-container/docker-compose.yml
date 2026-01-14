@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: privesc-lab1
+    container_name: privesc-test
+    privileged: true
+    stdin_open: true
+    tty: true
+    command: /bin/bash

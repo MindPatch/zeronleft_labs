@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: host-mount-lab
+    container_name: mount-test
+    stdin_open: true
+    tty: true
+    volumes:
+      - /tmp:/hosttmp
+      - /root:/hostroot:ro
+      - /etc:/hostetc:ro
+    command: /bin/bash
